@@ -17,7 +17,7 @@ procedure EncenderYContar() {
 }
 
 function cantidadDeLucesApagadasEnEsteLugar() {
-  return (choose 1 when (hayLuzApagada())
+  return (choose yield 1 when (hayLuzApagada()) yield
                  0 otherwise)
 }
 

@@ -1,7 +1,7 @@
 interactive program {
-  K_UP     -> { PrepararElPróximoTick()  }
-  K_RIGHT  -> { CompletarElPróximoTick() }
-  K_RETURN -> { SimularUnTick()          }
+  on K_UP     { PrepararElPróximoTick()  }
+  on K_RIGHT  { CompletarElPróximoTick() }
+  on K_RETURN { SimularUnTick()          }
 }
 
 function esCélulaViva() {
@@ -73,12 +73,12 @@ function nroDeVecinasVivasEnX() {
 }
 
 function nroDeCélulasVivasAl_(dirección) {
-  return (choose 1 when (puedeMover(dirección) && tieneCélulaVivaAl_(dirección))
+  return (choose yield 1 when (puedeMover(dirección) && tieneCélulaVivaAl_(dirección)) yield
                  0 otherwise)
 }
 
 function nroDeCélulasVivasEnDiagonalAl_(dirección) {
-  return (choose 1 when (puedeMoverEnDiagonal(dirección) && tieneCélulaVivaEnDiagonalAl_(dirección))
+  return (choose yield 1 when (puedeMoverEnDiagonal(dirección) && tieneCélulaVivaEnDiagonalAl_(dirección)) yield
                  0 otherwise)
 }
 

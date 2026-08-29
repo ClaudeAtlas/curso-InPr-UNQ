@@ -1,5 +1,5 @@
 function elegir_Cuando_YSiNo_(valor1, condición, valor2) {
-  return (choose valor1 when (condición)
+  return (choose yield valor1 when (condición) yield
                  valor2 otherwise)
 }               
 
